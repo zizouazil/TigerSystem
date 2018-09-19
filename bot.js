@@ -223,19 +223,6 @@ client.on('message', message=> {
     }
 });
 
-client.on('message', function(message) {
-    if (message.content == "..clear ultra") {
-        if (message.member.hasPermission("MANAGE_MESSAGES")) {
-            message.channel.fetchMessages()
-               .then(function(list){
-                    message.channel.bulkDelete(list);
-                }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})
-        }
-    }
-
-});
-
-
 client.on('message', message => {
     const prefix = '..'
     let args = message.content.split(" ").slice(1);
@@ -361,5 +348,6 @@ var prefix = "..";
   .addField("Done" , " تــــم ارســالك في الخــاص")
   message.channel.sendEmbed(embed);
     }
+});	
 
 client.login(process.env.BOT_TOKEN);
