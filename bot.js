@@ -1,14 +1,24 @@
 const Discord = require('discord.js');
+const fs = require('fs');
 const client = new Discord.Client();
- const prefix = ".";
 client.on('ready', () => {
-    console.log('I am ready!');
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', message => {
-    if (message.content === 'ping') {
-        message.reply('pong');
-      }
+client.on('ready', () => {
+  console.log('╔[════════════════════════════════════]╗');
+  console.log('')
+  console.log('            ╔[════════════]╗')
+  console.log('              Bot Is Online')
+  console.log('            ╚[════════════]╝')
+  console.log('')
+  console.log(`Logged in as ${client.user.tag}!`);
+  console.log('')
+  console.log(`servers! [ " ${client.guilds.size} " ]`);
+  console.log('')
+  console.log(`Users! [ " ${client.users.size} " ]`);
+  console.log('')
+  console.log('╚[════════════════════════════════════]╝')
 });
 
 lient.on('ready', () => {
@@ -243,68 +253,6 @@ client.on('message', function(message) {
 
 });
 
-
-client.on("message", message => {
-var prefix = "..";
-    if (message.content === (prefix + "help")) {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#580e6b")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`
-
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
-           
-        BOT By: | by Mr.SOKA
-
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
-
-          General Commands
-   
- 
-   『..bc    ❖ برودكاست للسرفر』
-   『..move all   ❖ سحب جميع الاعضاء الى رومك』
-   
-   『..move    ❖ سحب عضو』
-   
-   『..clear   ❖  مسح الشات بعدد』
-  
-   
-   
-  
-   
-  
-   
-           Administrative Commands
-   
- 
- 
-
-   『:beginner:  البوت تحت التطوير :beginner: 』
-
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
-
-
-  BOT By: | Mr.SOKA
-
-
-
-
-
-`)
-   message.author.sendEmbed(embed)
-   
-   }
-   });  
-client.on('message', message => {
-var prefix = "..";
-     if (message.content === (prefix + "help")) {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#8650a7")
-  .addField("Done" , " تــــم ارســالك في الخــاص")
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
 
