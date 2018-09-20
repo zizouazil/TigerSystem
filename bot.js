@@ -284,7 +284,7 @@ var prefix = "..";
           General Commands
    
  
-   『..bc    ❖ برودكاست للسرفر』
+  
    『..move all   ❖ سحب جميع الاعضاء الى رومك』
    『..allbots   ❖ 』
    『..move    ❖ سحب عضو』
