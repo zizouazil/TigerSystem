@@ -244,7 +244,135 @@ client.on('message', message => {
 });
 
 
+client.on('message', message => {
+     if(!message.channel.guild) return;
+var prefix = "..";
+                if(message.content.startsWith(prefix + 'allbots')) {
+
+    
+    if (message.author.bot) return;
+    let i = 1;
+        const botssize = message.guild.members.filter(m=>m.user.bot).map(m=>`${i++} - <@${m.id}>`);
+          const embed = new Discord.RichEmbed()
+          .setAuthor(message.author.tag, message.author.avatarURL)
+          .setDescription(`**Found ${message.guild.members.filter(m=>m.user.bot).size} bots in this Server**
+${botssize.join('\n')}`)
+.setFooter(client.user.username, client.user.avatarURL)
+.setTimestamp();
+message.channel.send(embed)
+
+}
 
 
+});
+
+client.on("message", message => {
+var prefix = "..";
+    if (message.content === (prefix + "help")) {
+     const embed = new Discord.RichEmbed() 
+         .setColor("#580e6b")
+         .setThumbnail(message.author.avatarURL)
+         .setDescription(`
+
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+           
+        BOT By: | by Mr.SOKA
+
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
+          General Commands
+   
+ 
+   『..bc    ❖ برودكاست للسرفر』
+   『..move all   ❖ سحب جميع الاعضاء الى رومك』
+   『..allbots   ❖ 』
+   『..move    ❖ سحب عضو』
+   『..اسئلني    ❖ 』
+   『..ترحيب 』
+   『..clear   ❖ مسح 100 رسالة』
+   『..botinfo ❖ اعدادت البوت』
+   
+   
+           Administrative Commands
+   
+ 
+ 
+
+   『:beginner:  البوت تحت التطوير :beginner: 』
+
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
+
+  BOT By: | Mr.SOKA
+
+
+
+
+
+`)
+   message.author.sendEmbed(embed)
+   
+   }
+   });  
+client.on('message', message => {
+var prefix = "..";
+     if (message.content === (prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , " تــــم ارســالك في الخــاص")
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+    if (message.content.startsWith("..ترحيب")) {
+                                    var mentionned = message.mentions.users.first();
+                var mentionavatar;
+                  if(mentionned){
+                      var mentionavatar = mentionned;
+                  } else {
+                      var mentionavatar = message.author;
+                      
+                  }
+                  let bot;
+                  if(message.author.bot) {
+                      bot = 'Bot'
+                  } else {
+                      bot = 'User'
+                  } 
+     var EsTeKnAN = new Discord.RichEmbed()
+     .setColor('RANDOM')
+     .setThumbnail(`${mentionavatar.avatarURL}`)
+     .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
+     .setDescription('***__WELCOME TO TIGER GANG SERVER***')
+     .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
+      message.channel.sendEmbed(EsTeKnAN);
+     }
+   });
+
+
+  client.on('message', message => {
+var prefix = "..";
+    if (message.author.bot) return;
+     if (message.content === prefix + "botinfo") {
+
+
+ message.author.sendMessage(`
+ 
+ __~~@MasterBot~~__
+ ╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱
+♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ 
+ __**created By**__: @!Mr.SOKA
+
+Server Support : https://discord.gg/xxnedCb
+
+bot link : https://discordapp.com/api/oauth2/authorize?client_id=492095280058204161&permissions=8&scope=bot
+`);
+
+message.channel.send('**تم الارسال في الخاص**');
+
+    }
+});
 
   client.login(process.env.BOT_TOKEN);
