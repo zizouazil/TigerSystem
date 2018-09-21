@@ -935,13 +935,14 @@ client.on('message', msg => {
 
 const sWlc = {}
 client.on('message', message => {
-	 var p = "..";
+	 
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
   if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
     channel: "welcome"
 }
 const channel = sWlc[message.guild.id].channel
+var p = ".."
   if (message.content.startsWith(prefix + "setwelcomer")) {
     if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
     let newChannel = message.content.split(' ').slice(1).join(" ")
