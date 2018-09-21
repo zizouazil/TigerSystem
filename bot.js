@@ -321,17 +321,25 @@ var prefix = "..";
    『..allbots   ❖ 』
    『..move    ❖ سحب عضو』
    『..اسئلني    ❖ 』
-   『..ترحيب 』
+   『..ترحيب  ❖ 』
    『..clear   ❖ مسح 100 رسالة』
    『..botinfo ❖ اعدادت البوت』
    『..invites 』
-   『..bc 』
-   『..id 』
+   『..id  ❖ 』
+   『..server  ❖ close chat 』
+   『..صورة السرفر 』
+   『 رابط البوت 』
+
 
 
    
    
            Administrative Commands
+
+   『..فتح  ❖  open chat』
+   『..قفل   ❖ close chat 』
+   『..bc  ❖ برودكاست』
+ 
    
  
  
@@ -339,9 +347,6 @@ var prefix = "..";
    『:beginner:  البوت تحت التطوير :beginner: 』
 
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
-
-
-  BOT By: | Mr.SOKA
 
 
 
@@ -655,7 +660,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
                message.reply("تم تقفيل الشات ✅ ")
            });
              }
-if (message.content === "..افتح") {
+if (message.content === "..فتح") {
     if(!message.channel.guild) return message.reply(' This command only for servers');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -670,5 +675,23 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 });
+
+ client.on("message", message => {             
+  const prefix = '..'
+          if(!message.channel.guild) return;
+   if(message.author.bot) return;
+      if(message.content === prefix + "صورة السيرفر"){ 
+          const embed = new Discord.RichEmbed()
+  
+      .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
+  .setAuthor(message.author.username, message.guild.iconrURL)
+    .setColor(0x164fe3)
+    .setImage(message.guild.iconURL)
+    .setURL(message.guild.iconrURL)
+                    .setTimestamp()
+
+   message.channel.send({embed});
+      }
+  });
 
   client.login(process.env.BOT_TOKEN);
