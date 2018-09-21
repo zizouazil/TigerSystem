@@ -929,59 +929,9 @@ client.on('message', msg => {
 
 client.on('message', msg => {
     if (msg.content === 'الشعار') {
-      msg.reply('**TG في العب**');
+      msg.reply('**TG في اللعب**');
     }
   }); 
 
-client.on('message',function(message) {
-    if(!message.channel.guild) return undefined;
-    const swearWords = ["الشتيمه الي تريد منعه","عاهرة","امك","اختك","قحبه","حمار","هنيكك","كس امك","كسمك"];
-    if (swearWords.some(word => message.content.includes(word)) ) {
-      message.delete()
-      message.reply("**مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ  ** :put_litter_in_its_place:  "); 
-    }
-  }); 
-
-var dat = JSON.parse(fs.readFileSync('./invite.json', 'utf8'));
-function forEachObject(obj, func) {
-    Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
-}
-client.on("ready", () => {
-    var guild;
-    while (!guild)
-        guild = client.guilds.get("Server id")
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            dat[Inv] = Invite.uses;
-        })
-    })
-})
-client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.find('name', 'welcome');
-    if (!channel) {
-        console.log("!channel fails");
-        return;
-    }
-    if (member.id == client.user.id) {
-        return;
-    }
-    console.log('made it till here!');
-    var guild;
-    while (!guild)
-        guild = client.guilds.get("Server ID")
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            if (dat[Inv])
-                if (dat[Inv] < Invite.uses) {
-                    console.log(3);
-                    console.log(`${member} joined over ${Invite.inviter}'s invite ${Invite.code}`)
- channel.send(`تم دعوتك من قبل ${Invite.inviter}`)            
- }
-            dat[Inv] = Invite.uses;
-        })
-    })
-});
 
   client.login(process.env.BOT_TOKEN);
