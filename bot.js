@@ -920,4 +920,28 @@ client.on ("guildMemberRemove", member => {
    
 })
 
+
+client.on('message', msg => {
+    if (msg.content === 'الشعار') {
+      msg.reply('**TG في الدسكور**');
+    }
+  }); 
+
+client.on('message', msg => {
+    if (msg.content === 'الشعار') {
+      msg.reply('**TG في العب**');
+    }
+  }); 
+
+client.on('message',function(message) {
+    if(!message.channel.guild) return undefined;
+    const swearWords = ["الشتيمه الي تريد منعه","عاهرة","امك","اختك","قحبه","حمار","هنيكك","كس امك","كسمك"];
+    if (swearWords.some(word => message.content.includes(word)) ) {
+      message.delete()
+      message.reply("**مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ  ** :put_litter_in_its_place:  "); 
+    }
+  }); 
+
+
+
   client.login(process.env.BOT_TOKEN);
