@@ -326,7 +326,7 @@ var prefix = "..";
    『..botinfo ❖ اعدادت البوت』
    『..invites 』
    『..id  ❖ 』
-   『..server  ❖ close chat 』
+   『..server  ❖  』
    『..صورة السرفر 』
    『 رابط البوت 』
 
@@ -693,5 +693,16 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
    message.channel.send({embed});
       }
   });
+
+
+  client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor(0x5500ff)
+  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك**`)
+      guild.owner.send(embed)
+});
+
+
+
 
   client.login(process.env.BOT_TOKEN);
