@@ -6,7 +6,7 @@ client.on('ready', () => {
 });
 
 client.on('ready', () => {
-client.user.setGame(`by Mr.SOKA | ..help | `,'https://www.twitch.tv/v5bz'); 
+client.user.setGame(`TigerSystem | By Mr.SOKA | `,'https://www.twitch.tv/v5bz'); 
   console.log('╔[════════════════════════════════════]╗');
   console.log('')
   console.log('            ╔[════════════]╗')
@@ -292,6 +292,10 @@ var prefix = "..";
    『..ترحيب 』
    『..clear   ❖ مسح 100 رسالة』
    『..botinfo ❖ اعدادت البوت』
+   『..invites 』
+   『..bc 』
+
+
    
    
            Administrative Commands
@@ -504,7 +508,22 @@ client.on('message', message => {
     }
 });
 
-
+  client.on('message', message => {
+	   var prefix = "..";
+   if(message.content.startsWith(prefix + "invites")) {
+    message.guild.fetchInvites().then(invs => {
+      let user = message.mentions.users.first() || message.author
+      let personalInvites = invs.filter(i => i.inviter.id === user.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+               let mmmmEmbed = new Discord.RichEmbed()
+                         .setAuthor(client.user.username)
+                         .setThumbnail(message.author.avatarURL)
+ .addField(` لقد قمت بدعوة :`, ` ${inviteCount} `)
+           .setFooter(`- Requested By: ${message.author.tag}`);
+           message.channel.send(mmmmEmbed)
+});
+  }
+});
 
 
   client.login(process.env.BOT_TOKEN);
