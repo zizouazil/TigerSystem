@@ -953,8 +953,7 @@ const channel = sWlc[message.guild.id].channel
 });
  
  
- 
- 
+const sWlc = {}
  
 client.on("guildMemberAdd", member => {
       if(!sWlc[member.guild.id]) sWlc[member.guild.id] = {
