@@ -313,9 +313,10 @@ var prefix = "..";
 
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 
-          General Commands
-   
- 
+         
+ **
+        ***__General orders__***
+**
   
    『..move all   ❖ سحب جميع الاعضاء الى رومك』
    『..allbots   ❖ 』
@@ -329,12 +330,13 @@ var prefix = "..";
    『..server  ❖  』
    『..صورة السرفر 』
    『 رابط البوت 』
+   『..topinv  』
 
-
-
-   
-   
-           Administrative Commands
+**
+  `
+,`
+        ***__Administrative Orders__***
+**
 
    『..فتح  ❖  open chat』
    『..قفل   ❖ close chat 』
@@ -803,6 +805,34 @@ return;
 }
 
 });
+
+client.on('message',message =>{
+    var prefix = "..";
+    if(message.content.startsWith(prefix + 'topinv')) {
+  message.guild.fetchInvites().then(i =>{
+  var invites = [];
+   
+  i.forEach(inv =>{
+    var [invs,i]=[{},null];
+     
+    if(inv.maxUses){
+        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
+    }else{
+        invs[inv.code] =+ inv.uses;
+    }
+        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
+   
+  });
+  var embed = new Discord.RichEmbed()
+  .setColor("#000000")
+  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
+  .setThumbnail("https://images-ext-1.discordapp.net/external/X6PLk_r6CalA19Z8OlypR6tJy6wA7rRxe-5ONDBD0K4/%3Fsize%3D128/https/cdn.discordapp.com/avatars/492095280058204161/58a41cedfec049d47d194a3f68d33921.jpg")
+           message.channel.send({ embed: embed });
+   
+  });
+   
+    }
+  });
 
 
   client.login(process.env.BOT_TOKEN);
