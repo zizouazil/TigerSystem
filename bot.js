@@ -937,7 +937,7 @@ client.on('message', msg => {
 
 const sWlc = {}
 client.on('message', message => {
-    var p = ".."
+
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
   if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
