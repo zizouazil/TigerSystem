@@ -741,15 +741,6 @@ client.on('message', message => {
 
      });
 
-const swearWords = ["حيوان", "انيكك", "ابوك", "اختك", "امك", "منيوكه", "قحبه", "كس", "عاهرة", "كلب", "حمار", "زق"]; 
-  if( swearWords.some(word => message.content.includes(word)) ) {
-    message.reply("مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ").then(sentMessage =>{
-      sentMessage.delete(20000)
-    })
-    message.delete(3000)
-    client.channels.get('492247435368726538').send(message.author.toString() + "استخدم كلام لا يليق ~")
-  }
-});
 
 
   client.login(process.env.BOT_TOKEN);
