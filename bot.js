@@ -933,8 +933,7 @@ client.on('message', msg => {
     }
   }); 
 
-
-
+const sWlc = {}
 client.on('message', message => {
  
 if(message.channel.type === "dm") return;
@@ -953,7 +952,8 @@ const channel = sWlc[message.guild.id].channel
 });
  
  
-const sWlc = {}
+ 
+ 
  
 client.on("guildMemberAdd", member => {
       if(!sWlc[member.guild.id]) sWlc[member.guild.id] = {
@@ -1034,5 +1034,6 @@ client.on("guildMemberAdd", member => {
      
       }
       });
+
 
   client.login(process.env.BOT_TOKEN);
