@@ -712,7 +712,7 @@ client.on('message', message => {
 
 
     if (message.content.startsWith(prefix + 'playing')) {
-    if (message.author.id !== '457015898637729812') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    if (message.author.id !== '389100615432929290') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
     client.user.setGame(argresult);
         message.channel.sendMessage(`**${argresult}** : تم تغيير الحالة`)
     } else
