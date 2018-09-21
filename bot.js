@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
+const prefix = ".."
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -508,7 +509,6 @@ client.on('message', message => {
 });
 
   client.on('message', message => {
-	   var prefix = "..";
    if(message.content.startsWith(prefix + "invites")) {
     message.guild.fetchInvites().then(invs => {
       let user = message.mentions.users.first() || message.author
