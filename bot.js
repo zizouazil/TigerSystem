@@ -1352,6 +1352,14 @@ client.on('message', async message => {
 });
 
 
+client.on('message',function(message) {
+    if(!message.channel.guild) return undefined;
+    const swearWords = ["الشتيمه الي تريد منعه","طيز اختك","طيز ","زب","سوة","خنيث","شرمطوه","كلب","كس","حمار","اختك","امك","قحبه","هنيكك","كس امك","كسمك"];
+    if (swearWords.some(word => message.content.includes(word)) ) {
+      message.delete()
+      message.reply("**عيب عيب عيب عليك كبر مخك شوي :angry: **"); 
+    }
+  }); 
 
 
 
