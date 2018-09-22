@@ -141,7 +141,7 @@ client.on('message', message => {
     let args = message.content.split(" ").slice(1);
     if (message.author.bot) return;
     if (!message.channel.guild) return;
-    if (message.content.startsWith(prefix + 'clear')) {
+    if (message.content.startsWith(prefix + 'مسح')) {
 
         if (isNaN(args[0])) return message.channel.send('**Please supply a valid amount of messages to purge**');
         if (args[0] > 100) return message.channel.send('**Please supply a number less than 100**');
@@ -1354,7 +1354,7 @@ client.on('message', async message => {
 
 client.on('message',function(message) {
     if(!message.channel.guild) return undefined;
-    const swearWords = ["الشتيمه الي تريد منعه","طيز اختك","طيز ","زب","سوة","خنيث","زق","شرمطوه","كلب","كس","حمار","اختك","امك","قحبه","هنيكك","كس امك","كسمك"];
+    const swearWords = ["الشتيمه الي تريد منعه","طيز اختك","طيز ","زب","خنيث","زق","شرمطوه","كلب","كس","حمار","اختك","امك","قحبه","هنيكك","كس امك","كسمك"];
     if (swearWords.some(word => message.content.includes(word)) ) {
       message.delete()
       message.reply("**مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ :put_litter_in_its_place:  **"); 
