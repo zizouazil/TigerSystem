@@ -187,7 +187,7 @@ message.react("❌")
  }}});
 
 client.on('guildMemberRemove', member => {
-let channel = member.guild.channels.find('name', 'welcome');
+let channel = member.guild.channels.find('name', '✬_welcome-loge');
 let memberavatar = member.user.avatarURL
   if (!channel) return; 
 let embed = new Discord.RichEmbed()
