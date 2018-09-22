@@ -1357,7 +1357,7 @@ client.on('message',function(message) {
     const swearWords = ["الشتيمه الي تريد منعه","طيز اختك","طيز ","زب","سوة","خنيث","زق","شرمطوه","كلب","كس","حمار","اختك","امك","قحبه","هنيكك","كس امك","كسمك"];
     if (swearWords.some(word => message.content.includes(word)) ) {
       message.delete()
-      message.reply("**عيب عيب عيب عليك كبر مخك شوي :angry: **"); 
+      message.reply("**مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ :put_litter_in_its_place:  **"); 
     }
   }); 
 
