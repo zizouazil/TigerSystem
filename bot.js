@@ -1012,7 +1012,7 @@ command = command.slice(prefix.length);
 
 let args = message.content.split(" ").slice(1);
 
-if (command == "kick") {
+if (command == "اطرد") {
              if(!message.channel.guild) return message.reply(':x: **ليس لديك الصلاحيات الكافية**');
        
 if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply(":x:**انت لا تملك الصلاحيات المطلوبه**");
@@ -1039,7 +1039,7 @@ message.channel.send(`**:white_check_mark: »  ${user.tag} kicked from the serve
 
 var args = message.content.split(" ").slice(1);
 
-  if (command == "ban") {
+  if (command == "بند") {
                if(!message.channel.guild) return message.reply('** This command only for servers**');
          
   if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**انت لا تملك الصلاحيات المطلوبه**");
