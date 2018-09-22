@@ -1435,9 +1435,6 @@ client.on('message', async message => {
   } // حقوق الفا كودز
 });
 
-client.on('guildMemberAdd', member => {
-    member.send(`:tiger: ولكم نورت سرفر النمور يعسل :revolving_hearts:   \n<@${member.user.id}>\nانت العضو رقم ${member.guild.members.size}`);
-});
 
 
   client.login(process.env.BOT_TOKEN);
