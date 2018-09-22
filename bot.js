@@ -925,13 +925,13 @@ client.on ("guildMemberRemove", member => {
 
 client.on('message', msg => {
     if (msg.content === 'الشعار') {
-      msg.reply('**TG في الدسكور**');
+      msg.reply('**TG . في الدسكور**');
     }
   }); 
 
 client.on('message', msg => {
     if (msg.content === 'الشعار') {
-      msg.reply('**TG في اللعب**');
+      msg.reply('**|| ᵀᴳ . في اللعب**');
     }
   }); 
 
