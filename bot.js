@@ -1362,8 +1362,7 @@ client.on('message',function(message) {
   }); 
 
 client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","✬ TIGER"));
-	
+    member.addRole(member.guild.roles.find("name","- TG : VISITORS"));	
     });
 
   client.login(process.env.BOT_TOKEN);
