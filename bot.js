@@ -187,7 +187,7 @@ message.react("❌")
  }}});
 
 client.on('guildMemberRemove', member => {
-let channel = member.guild.channels.find('name', '✬_welcome-loge');
+let channel = member.guild.channels.find('name', 'welcome');
 let memberavatar = member.user.avatarURL
   if (!channel) return; 
 let embed = new Discord.RichEmbed()
@@ -392,8 +392,8 @@ client.on('message', message => {
      var EsTeKnAN = new Discord.RichEmbed()
      .setColor('RANDOM')
      .setThumbnail(`${mentionavatar.avatarURL}`)
-     .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
-     .setDescription('***__WELCOME TO TIGER GANG SERVER***')
+     .addField("***منور يعسل سرفر النمور***" ,mentionavatar.username )
+     .setDescription('***WELCOME TO TIGER GANG SERVER***')
      .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
       message.channel.sendEmbed(EsTeKnAN);
      }
