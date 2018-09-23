@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('ready', () => {
-client.user.setGame(`| Tiger Gnag System | `,'https://www.twitch.tv/v5bz'); 
+client.user.setGame(` Tiger Gnag System  `,'https://www.twitch.tv/v5bz'); 
   console.log('╔[════════════════════════════════════]╗');
   console.log('')
   console.log('            ╔[════════════]╗')
@@ -700,13 +700,6 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
   });
 
 
-  client.on('guildCreate', guild => {
-  var embed = new Discord.RichEmbed()
-  .setColor(0x5500ff)
-  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك**`)
-      guild.owner.send(embed)
-});
-
 client.on('message', message => {
     var prefix = "..";
 
@@ -1356,6 +1349,7 @@ client.on('message', async message => {
 
 client.on('guildMemberAdd', member=> {
     member.addRole(member.guild.roles.find("name","- TG : VISITORS"));	
+	
     });
 
   client.login(process.env.BOT_TOKEN);
