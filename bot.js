@@ -25,7 +25,7 @@ client.user.setGame(` Tiger Gnag System  `,'https://www.twitch.tv/v5bz');
 });
 
 client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","TIGERS ✫"));	
+    member.addRole(member.guild.roles.find("name","- TIGERS ✫"));	
     });
 
 
@@ -399,7 +399,7 @@ client.on('message', message => {
      var EsTeKnAN = new Discord.RichEmbed()
      .setColor('RANDOM')
      .setThumbnail(`${mentionavatar.avatarURL}`)
-     .addField("***منور يعسل سرفر النمور***" ,mentionavatar.username )
+     .addField(":tiger: ***منور يعسل سرفر النمور***:tiger: " ,mentionavatar.username )
      .setDescription('***WELCOME TO TIGER GANG SERVER***')
      .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
       message.channel.sendEmbed(EsTeKnAN);
