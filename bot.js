@@ -25,7 +25,7 @@ client.user.setGame(` Tiger Gnag System  `,'https://www.twitch.tv/v5bz');
 });
 
 client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","TG : VISITORS"));	
+    member.addRole(member.guild.roles.find("name","- TIGERS ✫"));	
     });
 
 
