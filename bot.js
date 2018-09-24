@@ -24,6 +24,13 @@ client.user.setGame(` Tiger Gnag System  `,'https://www.twitch.tv/v5bz');
   console.log('╚[════════════════════════════════════]╝')
 });
 
+client.on('guildMemberAdd', member=> {
+    member.addRole(member.guild.roles.find("name","TG : VISITORS"));	
+    });
+
+
+
+
 client.on('message', message => {
 	const prefix = '..'
 var args = message.content.split(" ").slice(1);    
@@ -1346,8 +1353,5 @@ client.on('message', async message => {
 
 
 
-client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","- TG : VISITORS"));	
-    });
 
   client.login(process.env.BOT_TOKEN);
