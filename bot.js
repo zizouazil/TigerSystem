@@ -1354,7 +1354,7 @@ client.on('guildMemberAdd', Sal => {
     var embed = new Discord.RichEmbed()
     .setAuthor(Sal.user.username, Sal.user.avatarURL)
     .setThumbnail(Sal.user.avatarURL)
-    .setImage('http://live-timely-4jepdssgmc.time.ly/wp-content/uploads/2018/08/welcomeEvents.jpg') //هنا حط الصوره الي تبيها
+    .setImage('https://media.discordapp.net/attachments/492249032526135297/493429260892110858/20180922_223018.jpg?width=400&height=157') //هنا حط الصوره الي تبيها
     .setTitle('عضو جديد!')
     .setDescription('مرحبا بك بالسيرفر')
     .addField('``ايدي العضو``:',"" +  Sal.user.id, true)
