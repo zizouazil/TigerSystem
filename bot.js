@@ -1350,40 +1350,6 @@ client.on('message', async message => {
   } 
 });
 
-client.on('guildMemberAdd', Sal => { 
-    var embed = new Discord.RichEmbed()
-    .setAuthor(Sal.user.username, Sal.user.avatarURL)
-    .setThumbnail(Sal.user.avatarURL)
-    .setImage('https://media.discordapp.net/attachments/492249032526135297/493429260892110858/20180922_223018.jpg?width=400&height=157') //هنا حط الصوره الي تبيها
-    .setTitle('عضو جديد!')
-    .setDescription('مرحبا بك بالسيرفر')
-    .addField('``ايدي العضو``:',"" +  Sal.user.id, true)
-    .addField('``تاق العضو``', Sal.user.discriminator, true)
-    .addField('``تم الانشاء في``', Sal.user.createdAt, true)
-    .addField(' 👤  انت رقم',`**[ ${Sal.guild.memberCount} ]**`,true)
-    .setColor('RANDOM')
-    .setFooter(Sal.guild.name, Sal.guild.iconURL, true)
-    var channel =Sal.guild.channels.find('name', 'welcome') // هنا حط اسم الروم الي تبيه يكتب فيه
-    if (!channel) return;
-    channel.send({embed : embed});
-    });
 
-client.on('guildMemberRemove', Sal => { //By Salto7#4595
-  var embed = new Discord.RichEmbed()
-  .setAuthor(Sal.user.username, Sal.user.avatarURL)
-  .setThumbnail(Sal.user.avatarURL)
-  .setImage('https://previews.123rf.com/images/dxinerz/dxinerz1509/dxinerz150901337/45612790-bye-goodbye-icon.jpg') //هنا حط الصوره الي تبيها
-  .setTitle('خرج عضو')
-  .setDescription('الله معك مع السلامه')
-  .addField('``ايدي العضو``:',"" +  Sal.user.id, true)
-  .addField('``تاق العضو``', Sal.user.discriminator, true)
-  .addField('``تم الانشاء في``', Sal.user.createdAt, true)
-  .addField(' 👤 الان ',`**[ ${Sal.guild.memberCount} ]**`,true)
-  .setColor('RED')
-  .setFooter(Sal.guild.name, Sal.guild.iconURL, true)
-  var channel =Sal.guild.channels.find('name', 'out') // هنا حط اسم الروم الي تبيه يكتب فيه
-  if (!channel) return;
-  channel.send({embed : embed});
-  });
 
   client.login(process.env.BOT_TOKEN);
