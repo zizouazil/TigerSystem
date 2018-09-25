@@ -887,18 +887,6 @@ client.on('message', async msg => {
 
 
 
-client.on('message', msg => {
-    if (msg.content === 'الشعار') {
-      msg.reply('**TG . في الدسكور**');
-    }
-  }); 
-
-client.on('message', msg => {
-    if (msg.content === 'الشعار') {
-      msg.reply('**|| ᵀᴳ . في اللعب**');
-    }
-  }); 
-
 
 const sWlc = {}
 client.on('message', message => {
