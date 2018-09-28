@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-var Swears = JSON.parse(fs.readFileSync("./swears.json", "utf8"));
 const client = new Discord.Client();
 const moment = require("moment");
 const prefix = "..";
