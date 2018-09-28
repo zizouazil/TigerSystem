@@ -1394,6 +1394,8 @@ client.on('message', message => { //jackeo جاكيو
          }//jackeo جاكيو
  });//jackeo جاكيو
 
+
+
 client.on('message', message => {
     var args = message.content.toLowerCase().split(' ');
     var args1 = args.slice(1).join(' ');
