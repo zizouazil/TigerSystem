@@ -354,10 +354,10 @@ var prefix = "..";
    『..kick  ❖』
    『..ban  ❖ 』
    『..role  ❖ اعطاء رتبه』
-   『『!add-swear <SWEAR> > 』تضيف سبه
-   『『!swears > 』يطلع لك السبات الي ضفتها
-   『『!remove-swear <NUMBER> > يمسح سبه اذا تبي تعرف رقم السبه اكتب !swears』
-   『『!remove-all-swears > 』يمسح كل السبات
+   『..add-swear <SWEAR> > 』تضيف سبه
+   『..swears > 』يطلع لك السبات الي ضفتها
+   『..remove-swear <NUMBER> > يمسح سبه اذا تبي تعرف رقم السبه اكتب !swears』
+   『..remove-all-swears > 』يمسح كل السبات
 
 
 
