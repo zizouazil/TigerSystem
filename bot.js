@@ -1336,14 +1336,7 @@ client.on('message', async message => {
   } 
 });
 
-client.on('message',function(message) {
-    if(!message.channel.guild) return undefined;
-    const swearWords = ["الشتيمه الي تريد منعه","طيز اختك","زب","خنيث","زق","كلب","حمار","اختك","امك","قحبه","هنيكك","كسمك"];
-    if (swearWords.some(word => message.content.includes(word)) ) {
-      message.delete()
-      message.reply("**مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ :put_litter_in_its_place:  **"); 
-    }
-  }); 
+
 
 
 client.on('message', message => { //jackeo جاكيو
