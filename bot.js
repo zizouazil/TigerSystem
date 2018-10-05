@@ -1543,7 +1543,7 @@ client.on("guildMemberAdd", (member) => {
 
 var anti_spam = require("discord-anti-spam");
  
-anti_spam(bot, {
+antispam(client, {
   warnBuffer: 7,  //alpha codes 
   maxBuffer: 8,  //alpha codes
   interval: 1000,  //alpha codes
