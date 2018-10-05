@@ -1542,7 +1542,7 @@ client.on("guildMemberAdd", (member) => {
 });
 
 client.on('message', message => {
-    if(message.content == ('!profile')) {    
+    if(message.content == ('..profile')) {    
  
              if (message.channel.type === 'dm') return message.reply('This Command Is Not Avaible In Dm\'s :x:');   
             var Canvas = module.require('canvas');
@@ -1671,7 +1671,7 @@ let games = "client"
 client.on("message", message => {
   if (message.author.bot) return;
 	if(!message.channel.guild) return;       
-if (message.content.startsWith("!profile1")) {
+if (message.content.startsWith("..profile1")) {
                                let user = message.mentions.users.first();
          var men = message.mentions.users.first();
             var heg;
