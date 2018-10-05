@@ -1541,18 +1541,33 @@ client.on("guildMemberAdd", (member) => {
     })
 });
 
-var antispam = require("anti-spam");//npm i anti-spam
+var anti_spam = require("discord-anti-spam");
  
-antispam(client, {
-  warnBuffer: 3, //الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على تحذير.
-  maxBuffer: 5, // الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على ميوت.
-  interval: 1000, // مقدار الوقت قبل حصول باند
-  warningMessage: "stop spamming.", // رسالة تحذير اذا سوا سبام!
-  roleMessage: "Muted!!", // الرسالة الي تجي اذا شخص اخذ ميوت
-  roleName: "Muted", // اسم رتبة الميوت
-  maxDuplicatesWarning: 7, // عدد الرسايل الي قبل التحذيرات
-  maxDuplicatesBan: 10, // عدد الرسايل الي يقدر المستخدم يرسلها قبل الميوت
-  time: 10, // عدد الوقت الي يجلس لين تسحب رتبة الميوت من الشخص الحسبة برمجية وليست كتابية 
+anti_spam(bot, {
+  warnBuffer: 7,  //alpha codes 
+  maxBuffer: 8,  //alpha codes
+  interval: 1000,  //alpha codes
+  warningMessage: "**سيتم طردك إن لم توقف سبام**",  //alpha codes
+  banMessage: "تم الطرد بسبب السبام",  //alpha codes
+  maxDuplicatesWarning: 7, //alpha codes
+  maxDuplicatesBan: 10  //alpha codes
 });
+
+bot.login(process.env.BOT_SPAM);
+
+const bot1 = new Discord.Client();
+
+ var anti_spam1 = require("discord-anti-spam");
+anti_spam1(bot1, {
+  warnBuffer: 7,  //alpha codes 
+  maxBuffer: 8,  //alpha codes
+  interval: 1000, //alpha codes 
+  warningMessage: "**سيتم طردك إن لم توقف سبام**",  //alpha codes 
+  banMessage: "تم الطرد بسبب السبام",  //alpha codes
+  maxDuplicatesWarning: 7,  //alpha codes
+  maxDuplicatesBan: 10  //alpha codes
+});
+ //alpha codes
+ //alpha codes
 	
   client.login(process.env.BOT_TOKEN);
