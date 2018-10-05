@@ -1794,5 +1794,34 @@ message.channel.sendFile(canvas.toBuffer())
 
 });
 
+
+var anti_spam = require("discord-anti-spam");
+ 
+anti_spam(bot, {
+  warnBuffer: 7,  //alpha codes 
+  maxBuffer: 8,  //alpha codes
+  interval: 1000,  //alpha codes
+  warningMessage: "**سيتم طردك إن لم توقف سبام**",  //alpha codes
+  banMessage: "تم الطرد بسبب السبام",  //alpha codes
+  maxDuplicatesWarning: 7, //alpha codes
+  maxDuplicatesBan: 10  //alpha codes
+});
+
+bot.login(process.env.BOT_SPAM);
+
+const bot1 = new Discord.Client();
+
+ var anti_spam1 = require("discord-anti-spam");
+anti_spam1(bot1, {
+  warnBuffer: 7,  //alpha codes 
+  maxBuffer: 8,  //alpha codes
+  interval: 1000, //alpha codes 
+  warningMessage: "**سيتم طردك إن لم توقف سبام**",  //alpha codes 
+  banMessage: "تم الطرد بسبب السبام",  //alpha codes
+  maxDuplicatesWarning: 7,  //alpha codes
+  maxDuplicatesBan: 10  //alpha codes
+});
+ //alpha codes
+ //alpha codes
 	
   client.login(process.env.BOT_TOKEN);
