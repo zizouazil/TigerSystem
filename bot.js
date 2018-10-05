@@ -3,6 +3,7 @@ const fs = require('fs');
 var Swears = JSON.parse(fs.readFileSync("./swears.json", "utf8"));
 const client = new Discord.Client();
 const moment = require("moment");
+var antispam = require("anti-spam");
 const prefix = "..";
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -1542,7 +1543,7 @@ client.on("guildMemberAdd", (member) => {
 });
 
 
-var antispam = require("anti-spam");//npm i anti-spam
+const antispam = require("anti-spam");//npm i anti-spam
  
 antispam(client, {
   warnBuffer: 3, //الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على تحذير.
