@@ -1797,7 +1797,7 @@ message.channel.sendFile(canvas.toBuffer())
 
 var anti_spam = require("discord-anti-spam");
  
-anti_spam(bot, {
+anti_spam, {
   warnBuffer: 7,  //alpha codes 
   maxBuffer: 8,  //alpha codes
   interval: 1000,  //alpha codes
