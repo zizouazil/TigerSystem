@@ -1541,34 +1541,258 @@ client.on("guildMemberAdd", (member) => {
     })
 });
 
-const anti_spam = require("discord-anti-spam");
+client.on('message', message => {
+    if(message.content == ('!profile')) {    
  
-anti_spam(bot, {
-	
-  warnBuffer: 7,  //alpha codes 
-  maxBuffer: 8,  //alpha codes
-  interval: 1000,  //alpha codes
-  warningMessage: "**سيتم طردك إن لم توقف سبام**",  //alpha codes
-  banMessage: "تم الطرد بسبب السبام",  //alpha codes
-  maxDuplicatesWarning: 7, //alpha codes
-  maxDuplicatesBan: 10  //alpha codes
+             if (message.channel.type === 'dm') return message.reply('This Command Is Not Avaible In Dm\'s :x:');   
+            var Canvas = module.require('canvas');
+            var jimp = module.require('jimp');
+    
+     const w = ['ID1.png','ID2.png','ID3.png','ID4.png','ID5.png'];
+    
+             let Image = Canvas.Image,
+                 canvas = new Canvas(802, 404),
+                 ctx = canvas.getContext('2d');
+             ctx.patternQuality = 'bilinear';
+             ctx.filter = 'bilinear';
+             ctx.antialias = 'subpixel';
+             ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+             ctx.shadowOffsetY = 2;
+             ctx.shadowBlur = 2;
+             fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+                 if (err) return console.log(err);
+                 let BG = Canvas.Image;
+                 let ground = new Image;
+                 ground.src = Background;
+                 ctx.drawImage(ground, 0, 0, 802, 404);
+    
+     })
+                                let user = message.mentions.users.first();
+          var men = message.mentions.users.first();
+             var heg;
+             if(men) {
+                 heg = men
+             } else {
+                 heg = message.author
+             }
+           var mentionned = message.mentions.members.first();
+              var h;
+             if(mentionned) {
+                 h = mentionned
+             } else {
+                 h = message.member
+             }
+             var ment = message.mentions.users.first();
+             var getvalueof;
+             if(ment) {
+               getvalueof = ment;
+             } else {
+               getvalueof = message.author;
+             }//ما خصك ,_,
+                                           let url = getvalueof.displayAvatarURL.endsWith(".webp") ? getvalueof.displayAvatarURL.slice(5, -20) + ".png" : getvalueof.displayAvatarURL;
+                                             jimp.read(url, (err, ava) => {
+                                                 if (err) return console.log(err);
+                                                 ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                                                     if (err) return console.log(err);
+                            
+                                                             let Avatar = Canvas.Image;
+                                                             let ava = new Avatar;
+                                                             ava.src = buf;
+                                                             ctx.beginPath();
+                                                           ctx.drawImage(ava, 335, 3, 160, 169);
+                                                     ctx.font = '35px Arial Bold';
+                                                     ctx.fontSize = '40px';
+                                                     ctx.fillStyle = "#dadada";
+                                                     ctx.textAlign = "center";
+                                                    
+                            
+                                                     ctx.font = '30px Arial Bold';
+                                                     ctx.fontSize = '30px';
+                                                     ctx.fillStyle = "#ffffff";
+                                                                             ctx.fillText(`${getvalueof.username}`,655, 170);
+                                                                            
+                                                                        
+                                                          moment.locale('ar-ly');        
+                                            
+                                            
+                                                                    ctx.font = '30px Arial';
+                                                     ctx.fontSize = '30px';
+                                                     ctx.fillStyle = "#ffffff";
+                                                                             ctx.fillText(`${moment(h.joinedAt).fromNow()}`,150, 305);
+                                                              
+                                                              
+                                                                                                     ctx.font = '30px Arial';
+                                                     ctx.fontSize = '30px';
+                                                     ctx.fillStyle = "#ffffff";
+                                                                 ctx.fillText(`${moment(heg.createdTimestamp).fromNow()}`,150, 170); 
+                            
+                                                       let status;
+     if (getvalueof.presence.status === 'online') {
+         status = 'Online';
+     } else if (getvalueof.presence.status === 'dnd') {
+         status = 'dnd';
+     } else if (getvalueof.presence.status === 'idle') {
+         status = 'idle';
+     } else if (getvalueof.presence.status === 'offline') {
+         status = 'offline';
+     }
+     
+     
+                                          ctx.cont = '35px Arial';
+                                          ctx.fontSize = '30px';
+                                          ctx.filleStyle = '#ffffff'
+                                          ctx.fillText(`${status}`,655,305)
+                  
+                                                                   ctx.font = 'regular 30px Cairo';
+                                                                   ctx.fontSize = '30px';
+                                                                   ctx.fillStyle = '#ffffff'
+                                                         ctx.fillText(`${h.presence.game === null ? "No playing" : h.presence.game.name}`,390,390);
+                            
+                               ctx.font = '35px Arial';
+                                                                   ctx.fontSize = '30px';
+                                                                   ctx.fillStyle = '#ffffff'
+                                                                   ctx.fillText(`#${heg.discriminator}`,390,260)
+                            
+                                 ctx.beginPath();
+                                 ctx.stroke();
+                               message.channel.sendFile(canvas.toBuffer());
+                            
+                            
+                          
+                            
+                             })
+                            
+                             })
+ }
+ });
+
+let games = "client" 
+
+client.on("message", message => {
+  if (message.author.bot) return;
+	if(!message.channel.guild) return;       
+if (message.content.startsWith("!profile1")) {
+                               let user = message.mentions.users.first();
+         var men = message.mentions.users.first();
+            var heg;
+            if(men) {
+                heg = men
+            } else {
+                heg = message.author
+            }
+          var mentionned = message.mentions.members.first();
+             var h;
+            if(mentionned) {
+                h = mentionned
+            } else {
+                h = message.member
+            }
+            var ment = message.mentions.users.first();
+            var getvalueof;
+            if(ment) {
+              getvalueof = ment;
+            } else {
+              getvalueof = message.author;
+            }//var ghost = tf 3lek xD
+   var mentionned = message.mentions.users.first();
+
+    var client;
+      if(mentionned){
+          var client = mentionned;
+      } else {
+          var client = message.author;
+          
+      }
+  const w = ['./walls/9999.png'];
+if (!games[getvalueof.id]) games[getvalueof.id] = {wins: 0,loses: 0,points: 0,total: 0,credits: 100,level: 1,};          
+            let Image = Canvas.Image,
+            canvas = new Canvas(300, 300),
+            ctx = canvas.getContext('2d');       
+      fs.readFile(`${dataPro[getvalueof.id].wallSrc}`, function (err, Background) {
+          fs.readFile(`${w[0]}`, function (err, Background) {
+          if (err) return console.log(err);
+          let BG = Canvas.Image;
+          let ground = new Image;
+          ground.src = Background;
+          ctx.drawImage(ground, 0, 0, 297, 305);
+});
+          if (err) return console.log(err);
+          let BG = Canvas.Image;
+          let ground = new Image;
+          ground.src = Background;
+          ctx.drawImage(ground, 0, 0, 300, 305);
 });
 
-bot.login(process.env.BOT_SPAM);
 
-const bot1 = new Discord.Client();
 
- var anti_spam1 = require("discord-anti-spam");
-anti_spam1(bot1, {
-  warnBuffer: 7,  //alpha codes 
-  maxBuffer: 8,  //alpha codes
-  interval: 1000, //alpha codes 
-  warningMessage: "**سيتم طردك إن لم توقف سبام**",  //alpha codes 
-  banMessage: "تم الطرد بسبب السبام",  //alpha codes
-  maxDuplicatesWarning: 7,  //alpha codes
-  maxDuplicatesBan: 10  //alpha codes
+                let url = getvalueof.displayAvatarURL.endsWith(".webp") ? getvalueof.displayAvatarURL.slice(5, -20) + ".png" : getvalueof.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);
+                        
+
+                        //Avatar
+                       let Avatar = Canvas.Image;
+                        let ava = new Avatar;
+                        ava.src = buf;
+                     ctx.drawImage(ava, 8, 43, 80, 85); // احداثيات صورتك
+                        
+                        //ur name
+                        ctx.font = 'bold 16px Arial'; // حجم الخط و نوعه
+                        ctx.fontSize = '40px'; // عرض الخط
+                        ctx.fillStyle = "#000000"; // لون الخط
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`${getvalueof.username}`, 130, 125) // احداثيات اسمك          
+
+                         //bord
+                        ctx.font = "regular 12px Cairo" // نوع الخط وحجمه
+                        ctx.fontSize = '50px'; // عرض الخط
+                        ctx.fillStyle = "#f0ff00" // لون الخط    
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`Soon...`, 170, 198) // احداثيات ترتيبك
+                        
+                        //credit
+                        ctx.font = "bold 10px Arial" // نوع الخط وحجمه
+                        ctx.fontSize = '10px'; // عرض الخط
+                        ctx.fillStyle = '#FFFFFF' // لون الخط  
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`$ ${games[getvalueof.id].credits}`, 156, 163) // احداثيات المصاري                        
+                        
+                        //poits
+                        ctx.font = "bold 13px Arial" // ن
+                        ctx.fontSize = '10px'; // عرض الخطوع الخط وحجمه
+                        ctx.fillStyle = "#FFFFFF" // لون الخط 
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`${profile[getvalueof.id].points}`, 173, 182) // احداثيات النقاط
+
+                        //Level
+                        ctx.font = "bold 27px Arial" // نوع الخط و حجمه
+                        ctx.fontSize = '50px'; // عرض الخط
+                        ctx.fillStyle = "#FFFFFF" // لون الخط
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`${profile[getvalueof.id].level}`, 30, 200) // احداثيات اللفل
+                       
+                        //info
+                        ctx.font = "blod 13px Arial" // ن
+                        ctx.fontSize = '10px'; // عرض الخطوع الخط وحجمه
+                        ctx.fillStyle = "#FFFFFF" // لون الخط 
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`${profile[getvalueof.id].info}`, 118, 40) // احداثيات النقاط
+
+                        // REP
+                        ctx.font = "bold 27px Arial";
+                        ctx.fontSize = "100px";
+                        ctx.fillStyle = "#FFFFFF";
+                        ctx.textAlign = "left";
+                        ctx.fillText(`+${profile[getvalueof.id].rep}`, 18,270)
+                      
+message.channel.sendFile(canvas.toBuffer())
+})
+})
+}
+
 });
- //alpha codes
- //alpha codes
+
 	
   client.login(process.env.BOT_TOKEN);
