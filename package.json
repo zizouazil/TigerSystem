@@ -49,6 +49,7 @@
     "table": "^5.0.2",
     "youtube-info": "^1.2.1",
     "ytdl-core": "^0.25.2",
+    "anti-spam": "0.2.7",
     "zalgolize": "1.2.4"
   },
   "devDependencies": {
