@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 client.on('ready', () => {
-client.user.setGame(` Tiger Gnag System  `,'https://www.twitch.tv/v5bz'); 
+	
   console.log('╔[════════════════════════════════════]╗');
   console.log('')
   console.log('            ╔[════════════]╗')
