@@ -1542,7 +1542,7 @@ client.on("guildMemberAdd", (member) => {
     })
 });
 
-
+const antispam = require("anti-spam");//npm i anti-spam
  
 antispam(client, {
   warnBuffer: 3, //الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على تحذير.
