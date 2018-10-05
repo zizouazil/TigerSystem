@@ -1798,7 +1798,7 @@ message.channel.sendFile(canvas.toBuffer())
 const dateFormat = require('dateformat');
 var Canvas = require('canvas')
 var jimp = require('jimp')
-var moment = require("moment");
+
 //ALPHACODE
 
 client.on('message', message => {
